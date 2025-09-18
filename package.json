@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "homepage": "https://akazuma6.github.io/FlexBoard_Front01",
+
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
