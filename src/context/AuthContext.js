@@ -15,7 +15,7 @@ const AuthContext = createContext({
 
 export default AuthContext;
 
-//認証トークンを取得するためだけの関数
+//認証トークンを取得し、供給するためだけのkonnpo
 export const AuthProvider = ({ children }) => {
     const getInitialAuthToken = () => {
         try {
@@ -33,9 +33,9 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(() => (authToken ? jwtDecode(authToken.access) : null));
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
-//async関数で非同期処理をわかりやすくかいています。awaitに時間のかかる処理(APIレスポンスを受け取る処理)
-//もしawaitがなかったら？
-//axios.postは呼び出しベルを渡した瞬間に次の行に進んでしまうため、サーバーからの返事（response）がまだないのにif (response.status === 200)のような処理を行おうとして、エラーになってしまいます。
+    //async関数で非同期処理をわかりやすくかいています。awaitに時間のかかる処理(APIレスポンスを受け取る処理)
+    //もしawaitがなかったら？
+    //axios.postは呼び出しベルを渡した瞬間に次の行に進んでしまうため、サーバーからの返事（response）がまだないのにif (response.status === 200)のような処理を行おうとして、エラーになってしまいます。
     const loginUser = async (username, password) => {
         setLoading(true);
         try {

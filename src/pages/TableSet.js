@@ -28,6 +28,8 @@ export default function TableSet() {
   const [memo, setMemo] = useState('');
   const [extensionMinutes, setExtensionMinutes] = useState(0);
 
+  //useCallback 第一因数はメモ化したい関数。第二因数は依存配列。
+  // byGemini 第二引数（依存配列）: この配列に入れた値（上の例ではcount）が変化した時だけ、第一引数の関数が新しく作り直されます。配列が空 [] の場合は、コンポーネントの初回レンダリング時に一度だけ関数が作られ、その後はずっと同じものが使われます。
   const fetchTableData = useCallback(async () => {
     try {
       const response = await axios.get(`${API_BASE_URL}/tables/${tableId}/`);
@@ -38,7 +40,7 @@ export default function TableSet() {
       setMemo(data.memo || '');
       setExtensionMinutes(data.extension_minutes || 0);
     } catch (error) {
-      console.error("Failed to fetch table data:", error);
+      console.error("table dataのフェッチンぐに失敗:", error);
     }
   }, [tableId]);
 

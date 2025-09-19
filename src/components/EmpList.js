@@ -38,7 +38,7 @@ export default function EmpList() {
           setEmployees(sortedEmployees);
 
           // 休憩アラートのチェック
-          const fourHoursAgo = new Date(new Date().getTime() - (4 * 60 * 60 * 1000));
+          const fourHoursAgo = new Date(new Date().getTime() - (4 * 60 * 60 * 1000)); //4hに設定
           const alerts = sortedEmployees.filter(emp => 
             emp.active_check_in && new Date(emp.active_check_in) < fourHoursAgo
           );
