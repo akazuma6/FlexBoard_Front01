@@ -6,6 +6,8 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { API_BASE_URL } from '../config';
 
+
+//付箋のロジック
 const Note = ({ note, onUpdate, onDelete }) => {
   const [memo, setMemo] = useState(note.memo);
   const nodeRef = useRef(null);
