@@ -131,7 +131,7 @@ export default function MyPage() {
     makeApiRequest('patch', `${API_BASE_URL}/employees/roleactivities/${activeRole.id}/`, { data: { end_time: new Date().toISOString() }, errorMessage: "役割の終了処理に失敗しました。" });
   };
 
-  // 【修正点】時刻がない場合にN/Aではなく空白を返すように変更
+  // 時刻がない場合にN/Aではなく空白を返すように変更
   const formatDateTime = (isoString) => isoString ? new Date(isoString).toLocaleString('ja-JP') : '';
   
   const calculateTotalBreak = (breaks) => {
