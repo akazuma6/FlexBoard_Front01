@@ -1,3 +1,4 @@
+# backendの起動に少し時間がかかります
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
